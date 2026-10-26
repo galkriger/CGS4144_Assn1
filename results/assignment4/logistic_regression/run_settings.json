@@ -1,0 +1,57 @@
+{
+  "n_runs": 546,
+  "n_distinct_titles": 72,
+  "n_gene_rows": 37771,
+  "n_unique_symbols": 37739,
+  "additional_rows_with_repeated_symbols": 32,
+  "feeding_group_counts": {
+    "AL": 367,
+    "RF": 179
+  },
+  "selected_cluster_counts": {
+    "2": 205,
+    "1": 199,
+    "3": 142
+  },
+  "input_sha256": {
+    "expression": "68f7bf20eda8e98e002b613e4ed094d6959c528ca667cafbf00c58f137d683e7",
+    "metadata": "3424b9faea79c558f29b7af941106786bcd6e32f863b846c3ebc596280ccf623",
+    "clusters": "a986d5192c3d5201cc79bdcc60abcaec0a136f69474450f768f36b8c473e6359",
+    "processing": "07d1d6d73b4eba06bf0d3758e0979a48d1c1e719324a306f680c28337b25bd2b"
+  },
+  "method": "logistic_L1",
+  "model_parameters": {
+    "C": 1.0,
+    "penalty": "l1",
+    "solver": "liblinear",
+    "class_weight": "balanced",
+    "max_iter": 3000,
+    "tol": 0.0001,
+    "random_state": 42
+  },
+  "analysis_sha256": "251674c5eb423ffe05efdb6fda28bacce657e87447a3bc4269cc5a7c87aec3cc",
+  "n_folds": 5,
+  "fold_stratification": "feeding_group",
+  "fold_group": "refinebio_title; conservative grouping proxy, not verified biological subject ID",
+  "cluster_source": "results/assignment3/hierarchical/selected_clusters.csv",
+  "cluster_strategy": "three binary one-vs-rest logistic regressions; a single supervised method",
+  "auc_definition": "RF-vs-AL AUC; cluster AUC is mean of raw-decision-score one-vs-rest AUCs",
+  "gene_counts": [
+    10,
+    100,
+    1000,
+    5000,
+    10000
+  ],
+  "selection": "raw per-gene sample variance ddof=1 fitted within each training fold",
+  "signature": "nonzero L1 coefficients after a descriptive full-cohort refit",
+  "performance_source": "out-of-fold predictions only; full refits are never scored",
+  "versions": {
+    "python": "3.9.2",
+    "numpy": "2.0.2",
+    "pandas": "2.3.3",
+    "scipy": "1.13.1",
+    "sklearn": "1.6.1"
+  },
+  "elapsed_fit_seconds": 29.74
+}
